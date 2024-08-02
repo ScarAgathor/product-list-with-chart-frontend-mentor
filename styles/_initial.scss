@@ -1,0 +1,55 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+line-height: calc(1em + 0.5rem);
+-webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+display: block;
+max-width: 100%;
+}
+
+input, button, textarea, select {
+font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+overflow-wrap: break-word;
+}
+
+@font-face {
+    font-family: Bold;
+    src: url(../assets/fonts/RedHatText-Bold.ttf);
+}
+
+@font-face {
+    font-family: SemiBold;
+    src: url(../assets/fonts/RedHatText-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: Regular;
+    src: url(../assets/fonts/RedHatText-Regular.ttf);
+}
+
+$text-preset-1: 2.5rem/7.5rem Bold;
+$text-preset-2: 1.5rem Bold;
+$text-preset-3: 1rem SemiBold;
+$text-preset-4: 0.875rem Regular;
+$text-preset-4-bold: 0.875rem SemiBold;
+$Red: #c73b0f;
+$Rose-900: #260f08;
+$Rose-500: #87635a;
+$Rose-400: #ad8a85;
+$Rose-300: #caafa7;
+$Rose-100: #f5eeec;
+$Rose-50: #fcf8f6;
+$Green: #1ea575;
+$Black: #000000;
+$White: #ffffff;
+

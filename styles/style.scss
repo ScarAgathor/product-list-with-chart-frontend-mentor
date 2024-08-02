@@ -1,0 +1,473 @@
+@use 'initial' as *;
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    padding: clamp(32px, 8.5vw, 88px);
+    background-color: $Rose-50;
+    display: grid;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-bottom: 50px;
+
+    @media screen and (min-width:1110px) {
+        flex-direction: row;
+        align-items: start;
+    }
+}
+
+
+.product__section {
+    display: grid;
+    gap: 32px;
+
+    h1 {
+        font: $text-preset-1;
+        line-height: 120%;
+        color: $Rose-900;
+    }
+}
+
+.product__list {
+    display: grid;
+    justify-content: center;
+    row-gap: 24px;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 24px;
+        row-gap: 32px;
+    }
+}
+
+.product {
+    display: grid;
+    gap: 38px;
+
+    &__container {
+        height: 212px;
+        position: relative;
+
+        picture {
+           width: 100%;
+           height: 100%; 
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
+
+        @media screen and (min-width:1110px) {
+            height: 240px;
+        }
+    }
+
+
+    &__info {
+        display: grid;
+        gap: 4px;
+    
+        .product__category {
+            font: $text-preset-4;
+            color: $Rose-500;
+        }
+
+        .product__name {
+            font: $text-preset-3;
+            color: $Rose-900;
+        }
+
+        .product__price {
+            font: $text-preset-3;
+            color: $Red;
+        }
+    }
+}
+
+.atc__button {
+    width: 160px;
+    height: 44px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    background-color: $White;
+    border: 1px solid $Rose-400;
+    cursor: pointer;
+    padding: 12px;
+    gap: 8px;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    span {
+        color: $Rose-900;
+        font: $text-preset-4-bold;
+    }
+}
+
+.atc__button--display {
+    display: none;
+}
+
+.atc__button:hover, .atc__button:focus {
+    border: 1px solid $Red;
+
+    span {
+        color: $Red;
+    }
+    
+}
+
+.amount__buttons {
+    width: 160px;
+    height: 44px;
+    border-radius: 999px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -22px;
+    padding: 12px;
+    background-color: $Red;
+    display: flex;
+    justify-content: space-between;
+
+    .amount__button {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $White;
+        background: none;
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+    }
+
+    .amount__button:hover, .amount__button:focus {
+        background-color: $White;
+
+        path {
+            fill: $Red;
+        }
+    }
+
+    span {
+        color: $White;
+        font: $text-preset-4-bold;
+    }
+}
+
+.amount__buttons--display {
+    display: none;
+}
+
+.cart__section {
+    width: 100%;
+    border-radius: 12px;
+    padding: 24px;
+    display: grid;
+    gap: 8px;
+    background-color: $White;
+
+    h2 {
+        color: $Red;
+        font: $text-preset-2;   
+    }
+    
+    @media screen and (min-width:1110px) {
+        width: 384px;
+    }
+}
+
+.cart__items--empty {
+    width: 100%;
+    min-height: 195px;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    p {
+        font: $text-preset-4-bold;
+        color: $Rose-500;
+    }
+}
+
+.cart__items--empty--display {
+    display: none;
+}
+
+.cart__items--added {
+    display: grid;
+    gap: 24px;
+}
+
+.cart__items--added--display {
+    display: none;
+}
+
+.cart__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid $Rose-100;
+
+    .cart__item__name {
+        font: $text-preset-4-bold;
+        color: $Rose-900;
+    }
+
+    .cart__item__info {
+        display: grid;
+        gap: 8px;
+    }
+
+    .cart__item__numbers {
+        display: flex;
+        gap: 8px;
+    }
+
+    .cart__item__amount {
+        font: $text-preset-4-bold;
+        color: $Red;
+    }
+
+    .cart__item__price {
+        font: $text-preset-4;
+        color: $Rose-500;
+    }
+
+    .cart__item__price--total {
+        font: $text-preset-4-bold;
+        color: $Rose-500;
+    }
+
+    .cart__button--remove {
+        display: grid;
+        place-content: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid $Rose-400;
+        background: none;
+        cursor: pointer;
+
+        path {
+            fill: $Rose-400;
+        }
+    }
+
+    .cart__button--remove:hover, .cart__button--remove:focus {
+        border-color: $Rose-900;
+
+        path {
+            fill: $Rose-900;
+        }
+    }
+}
+
+
+
+.cart__total {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+        font: $text-preset-4;
+        color: $Rose-900;
+    }
+
+    &__value {
+        font: $text-preset-2;
+        color: $Rose-900;
+    }
+}
+
+.carbon-neutral {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    background-color: $Rose-50;
+    border-radius: 8px;
+
+    p {
+        font: $text-preset-4;
+        color: $Rose-900;
+    }
+
+    span {
+        font: $text-preset-4-bold;
+
+    }
+}
+
+.cart__button--submit {
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 999px;
+    border: none;
+    font: $text-preset-3;
+    color: $White;
+    background-color: $Red;
+    cursor: pointer;
+}
+
+.cart__button--submit:hover, .cart__button--submit:focus {
+    background-color: darken($Red, 25%);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    background-color: rgba($Black, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay--display {
+    display: none;
+}
+
+.modal {
+    background-color: $White;
+    border-radius: 12px;
+    padding: 40px;
+    display: grid;
+    gap: 32px;
+    max-width: 592px;
+    width: 99vw;
+}
+
+.modal__header {
+    display: grid;
+    gap: 24px;
+
+    &__text {
+        display: grid;
+        gap: 8px;
+
+        h2{
+            font: $text-preset-1;
+            line-height: 120%;
+            color: $Rose-900;
+        }
+
+        p{
+            font: $text-preset-4;
+            color: $Rose-500;
+        }
+    }
+}
+
+.order {
+    padding: 24px;
+    background-color: $Rose-50;
+    border-radius: 8px;
+    display: grid;
+    gap: 16px;
+}
+
+.order__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__text {
+        font: $text-preset-4;
+        color: $Rose-900;
+    }
+
+    &__value {
+        font: $text-preset-2;
+        color: $Rose-900;
+    }
+}
+
+.order__button {
+    padding: 16px 24px;
+    border-radius: 999px;
+    border: none;
+    font: $text-preset-3;
+    color: $White;
+    background-color: $Red;
+    cursor: pointer;
+}
+
+.order__button:hover, .order__button:focus {
+    background-color: darken($Red, 25%);
+}
+
+.order__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $Rose-100;
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        img {
+            width: 48px;
+            border-radius: 4px;
+        }
+    }
+
+
+    &__total {
+        font: $text-preset-3;
+        color: $Rose-900;
+    }
+}
+
+.order__item:last-of-type {
+    padding-bottom: 24px;
+}
+
+.item__name {
+    font: $text-preset-4-bold;
+    color: $Rose-900;
+}
+
+.item__price__amount {
+    display: flex;
+    gap: 8px;
+
+    .amount {
+        font: $text-preset-4-bold;
+        color: $Red;
+    }
+
+    .price {
+        font: $text-preset-4;
+        color: $Rose-500;
+    }
+}

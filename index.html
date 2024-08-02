@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product list with chart</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <main>
+        <section class="product__section">
+            <h1>Desserts</h1>
+            <div class="product__list" data-product-list>
+                <!-- <div class="product">
+                    <div class="product__container">
+                        <picture>
+                            <source media="(min-width: 1110px)" srcset="./assets/images/image-waffle-desktop.jpg">
+                            <source media="(min-width: 768px)" srcset="./assets/images/image-waffle-tablet.jpg">
+                            <img src="./assets/images/image-waffle-mobile.jpg" alt="">
+                        </picture>
+
+                        <button class="atc__button" onclick="createCartItem(this)">
+                            <img src="assets/images/icon-add-to-cart.svg" alt="">
+                            <span>Add to Cart</span>
+                        </button>                 
+
+                        <div class="amount__buttons amount__buttons--display">
+                            <button class="amount__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none" viewBox="0 0 10 2"><path fill="#fff" d="M0 .375h10v1.25H0V.375Z"/></svg>
+                            </button>
+                            <span>1</span>
+                            <button class="amount__button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__info">
+                        <p class="product__category">Waffle</p>
+                        <p class="product__name">Waffle with Berries</p>
+                        <p class="product__price">$6.50</p>
+                    </div>
+                </div> -->
+            </div> 
+        </section>
+
+        <section class="cart__section">
+            <h2>Your Cart (<span id="amount">0</span>)</h2>
+                <div class="cart__items--empty" data-cart-empty>
+                    <img src="assets/images/illustration-empty-cart.svg" alt="">
+                    <p>Your added items will appear here</p>
+                </div>
+                <div class="cart__items--added cart__items--added--display" data-cart-not-empty>
+                    <div class="added__items__container">
+                        <!-- <div class="cart__item">
+                            <div class="cart__item__info">
+                                <p class="cart__item__name">Classic Tiramisu</p>
+                                <p class="cart__item__numbers">
+                                    <span class="cart__item__amount">1x</span>
+                                    <span class="cart__item__price">@$5.50</span>
+                                    <span class="cart__item__price--total">$5.50</span>
+                                </p>
+                            </div>
+
+                            <button class="cart__button--remove">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#CAAFA7" d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"/></svg>
+                            </button>
+                        </div> -->
+                    </div>
+
+                    <div class="cart__total">
+                        <p class="cart__total__text">Order Total</p>
+                        <p class="cart__total__value">$<span id="cart-total"></span></p>
+                    </div>
+                    <div class="carbon-neutral">
+                        <img src="assets/images/icon-carbon-neutral.svg" alt="">
+                        <p>This is a <span>carbon-neutral</span> delivery</p>
+                    </div>
+                    <button class="cart__button--submit" onclick="confirmOrder()">Confirm Order</button>
+                </div>            
+        </section>
+    </main>
+
+    <div class="overlay overlay--display" id="overlay">
+        <section class="modal">
+            <div class="modal__header">
+                <img src="./assets/images/icon-order-confirmed.svg" alt="">
+                <div class="modal__header__text">
+                    <h2>Order Confirmed</h2>
+                    <p>We hope you enjoy your food!</p>
+                </div>
+            </div>
+            <div class="order">
+                <div class="order__list" data-order-list>
+                    <!-- <div class="order__item">
+                        <div class="order__item__info">
+                            <img src="./assets/images/image-waffle-thumbnail.jpg" alt="">
+                            <div class="item__text">
+                                <p class="item__name">Classic Tiramisu</p>
+                                <p class="item__price__amount"><span class="amount">1x</span><span class="price">@$5.50</span></p>
+                            </div>
+                        </div>
+                        <p class="order__item__total">$5.50</p>
+                    </div>-->
+                </div>
+                
+
+                <div class="order__total">
+                    <p class="order__total__text">Order Total</p>
+                    <p class="order__total__value">$<span id="order-total"></span></p>
+                </div>
+            </div>
+            <button class="order__button" onclick="startNewOrder()">Start New Order</button>
+        </section>
+
+    </div>
+</body>
+</html>

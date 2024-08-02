@@ -224,6 +224,11 @@ main {
     display: none;
 }
 
+.added__items__container {
+    overflow-y: scroll;
+    max-height: 270px;
+}
+
 .cart__item {
     display: flex;
     align-items: center;

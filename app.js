@@ -60,6 +60,7 @@ function createCartItem(atcButton) {
     let amountButtons = atcButton.nextElementSibling
     let productName = atcButton.parentElement.nextElementSibling.children[1].textContent
     let productPrice = atcButton.parentElement.nextElementSibling.children[2].textContent
+    let productImg = atcButton.parentElement.firstElementChild.lastElementChild
 
     if(cartEmpty.classList.contains('cart__items--empty--display') == false) {
         cartEmpty.classList.add('cart__items--empty--display')
@@ -84,6 +85,7 @@ function createCartItem(atcButton) {
         </button>
     `
 
+    productImg.classList.add('img--selected')
     atcButton.classList.add('atc__button--display')
     amountButtons.classList.remove('amount__buttons--display')
     updateCartAmountAndTotal()
@@ -93,7 +95,6 @@ function removeCartItem(removeButton) {
     let cartItem = removeButton.parentElement;
     let itemName = removeButton.previousElementSibling.firstElementChild
     
-
     itemContainer.removeChild(cartItem)
 
     for(let i = 0; i < productList.children.length; i++) {
@@ -101,9 +102,11 @@ function removeCartItem(removeButton) {
 
         if(productName.textContent == itemName.textContent) {
             let product = productName.parentElement.parentElement
+            let productImg = product.firstElementChild.firstElementChild.lastElementChild
             let atcButton = product.firstElementChild.children[1]
             let amountButtons = product.firstElementChild.lastElementChild
             let productAmount = amountButtons.children[1]
+            productImg.classList.remove('img--selected')
             atcButton.classList.remove('atc__button--display')
             amountButtons.classList.add('amount__buttons--display')
             productAmount.textContent = String(1)
@@ -182,8 +185,10 @@ function decreaseAmount(button) {
 
             if(amount < 1) {
                 let product = productName.parentElement.parentElement
+                let productImg = product.firstElementChild.firstElementChild.lastElementChild
                 let atcButton = product.firstElementChild.children[1]
                 let amountButtons = product.firstElementChild.lastElementChild
+                productImg.classList.remove('img--selected')
                 itemContainer.removeChild(item)
                 atcButton.classList.remove('atc__button--display')
                 amountButtons.classList.add('amount__buttons--display')
@@ -245,9 +250,11 @@ function startNewOrder() {
     overlay.classList.add('overlay--display')
     for(let i = 0; i < productList.children.length; i++) {
         let product = productList.children[i]
+        let productImg = product.firstElementChild.firstElementChild.lastElementChild
         let atcButton = product.firstElementChild.children[1]
         let amountButtons = product.firstElementChild.lastElementChild
         let productAmount = amountButtons.children[1];
+        productImg.classList.remove('img--selected')
         atcButton.classList.remove('atc__button--display')
         amountButtons.classList.add('amount__buttons--display')
         productAmount.textContent = String(1)

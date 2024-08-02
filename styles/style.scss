@@ -64,6 +64,10 @@ main {
             border-radius: 8px;
         }
 
+        .img--selected {
+            border: 2px solid $Red;
+        }
+
         @media screen and (min-width:1110px) {
             height: 240px;
         }

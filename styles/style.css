@@ -97,6 +97,9 @@ main {
   height: 100%;
   border-radius: 8px;
 }
+.product__container .img--selected {
+  border: 2px solid #c73b0f;
+}
 @media screen and (min-width: 1110px) {
   .product__container {
     height: 240px;

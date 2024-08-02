@@ -58,7 +58,6 @@ function displayProducts() {
 
 function createCartItem(atcButton) {
     let amountButtons = atcButton.nextElementSibling
-    let productCategory = atcButton.parentElement.nextElementSibling.children[0].textContent
     let productName = atcButton.parentElement.nextElementSibling.children[1].textContent
     let productPrice = atcButton.parentElement.nextElementSibling.children[2].textContent
 
